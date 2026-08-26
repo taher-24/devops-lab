@@ -20,8 +20,7 @@ pipeline {
  stage('Deploy') {
  steps {
  echo 'Déploiement de l application Flask'
- sh 'pkill -f "flask --app app" || true'
- sh 'nohup python3 -m flask --app app run --host=0.0.0.0 --port=5000 > flask.log 2>&1 &'
+ sh 'sudo /usr/bin/systemctl restart devops-lab'
  }
  }
  }
